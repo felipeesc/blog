@@ -3,7 +3,7 @@ name: Integração Continua
 on: pull_request
 
 jobs:
-    integracao-continua:
+    integration-continua:
         runs-on: ubuntu-latest
 
 steps:
