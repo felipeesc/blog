@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3.6.10-management-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: rmq
+      RABBITMQ_DEFAULT_PASS: pass
+    restart: on-failure
+    ports:
+      - 4369:4369
+      - 5671:5671
+      - 5672:5672
+      - 25672:25672
+      - 15671:15671
+      - 15672:15672
+
+  postgres:
+    container_name: postgres
+    image: postgres:9.6.6-alpine
+    environment:
+      POSTGRES_PASSWORD: dbpass
+      POSTGRES_USER: dbuser
+      POSTGRES_DB: dbname
+    restart: on-failure
+    ports:
+      - 5432:5432
